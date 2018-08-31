@@ -23,7 +23,7 @@ if 'FAIL' in hand:
 
 print('Beginning Game...')
 turn_count = 0
-while(1 == 1):
+while 1 == 1:
     print('The current board is:')
     print(domino_board)
     turn = func.turn(hand, domino_board)

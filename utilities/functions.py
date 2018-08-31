@@ -80,6 +80,14 @@ class functions:
             print('Entry not recognized repeat move')
         return [domino_board, hand]
 
+    # Move type 4
+    def pass_move(self, hand, domino_board):
+        question = input('Do you want to pass? (y/n):\n')
+        if question == 'y':
+            return [domino_board, hand]
+        else:
+            print('Turn was not passed')
+
     # Function to perform turns
     def turn(self, hand, domino_board):
         move_type = str(input('Input move type (? for help):\n'))
@@ -101,7 +109,7 @@ class functions:
             return self.draw_domino_to_hand(hand, domino_board)
         elif move_type == '4':
             print('Move type: %s' % move_type)
-
+            return self.pass_move(hand, domino_board)
         elif move_type == '5':
             if input('Has the game ended? (y/n)\n') == 'y':
                 return 'end_game', 'end_game'
